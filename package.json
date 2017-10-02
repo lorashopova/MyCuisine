@@ -1,5 +1,5 @@
 {
-  "name": "naturally",
+  "name": "my-cuisine",
   "version": "1.0.0",
   "description": "Telerik Academy SPA Project",
   "main": "index.js",
@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lorashopova/MyCuisine"
   },
   "author": "Lora Shopova (lshopowa@yahoo.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com//issues"
+    "url": "https://github.com/lorashopova/MyCuisine/issues"
   },
-  "homepage": "https://github.com/#readme",
+  "homepage": "https://github.com/lorashopova/MyCuisine#readme",
   "dependencies": {
     "bootstrap": "^4.0.0-beta",
     "handlebars": "^4.0.10",
