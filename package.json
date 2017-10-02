@@ -1,0 +1,30 @@
+{
+  "name": "naturally",
+  "version": "1.0.0",
+  "description": "Telerik Academy SPA Project",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha -R spec tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Lora Shopova (lshopowa@yahoo.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com//issues"
+  },
+  "homepage": "https://github.com/#readme",
+  "dependencies": {
+    "bootstrap": "^4.0.0-beta",
+    "handlebars": "^4.0.10",
+    "jquery": "^3.2.1",
+    "moment": "^2.18.1",
+    "popper.js": "^1.12.5",
+    "sammy": "^0.7.6",
+    "systemjs": "^0.20.19",
+    "systemjs-plugin-babel": "0.0.25",
+    "toastr": "^2.1.2"
+  }
+}
