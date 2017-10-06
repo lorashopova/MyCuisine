@@ -9,10 +9,11 @@ function makeAuth(type) {
     } else {
         return 'Kinvey ' + localStorage.getItem('authtoken');
     }
+        
 }
 
 function makeRequest(method, module, endpoint, auth) {
-    let request = {
+    const request = {
         method,
         url: kinveyUrls.baseUrl + module + '/' + kinveyUrls.appKey + '/' + endpoint,
         headers: {
@@ -25,28 +26,28 @@ function makeRequest(method, module, endpoint, auth) {
 }
 
 class Requester {
-    get (module, endpoint, auth) {
+    get(module, endpoint, auth) {
         return $.ajax(makeRequest('GET', module, endpoint, auth));
     }
 
-    post (module, endpoint, auth, data) {
-        let req = makeRequest('POST', module, endpoint, auth);
+    post(module, endpoint, auth, data) {
+        const req = makeRequest('POST', module, endpoint, auth);
         req.data = JSON.stringify(data);
         return $.ajax(req);
     }
 
-    update (module, endpoint, auth, data) {
-        let req = makeRequest('PUT', module, endpoint, auth);
+    update(module, endpoint, auth, data) {
+        const req = makeRequest('PUT', module, endpoint, auth);
         req.data = JSON.stringify(data);
         return $.ajax(req);
     }
 
-    remove (module, endpoint, auth) {
+    remove(module, endpoint, auth) {
         return $.ajax(makeRequest('DELETE', module, endpoint, auth));
     }
 }
 
-let requester = new Requester();
+const requester = new Requester();
 
 export {
     requester
