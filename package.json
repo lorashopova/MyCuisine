@@ -26,5 +26,10 @@
     "systemjs": "^0.20.19",
     "systemjs-plugin-babel": "0.0.25",
     "toastr": "^2.1.2"
+  },
+  "devDependencies": {
+    "eslint": "^4.8.0",
+    "eslint-config-google": "^0.9.1",
+    "gulp-eslint": "^4.0.0"
   }
 }
