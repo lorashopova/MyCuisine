@@ -10,62 +10,69 @@
     </ul>
   </div>
 </div>
-<section class="row">
-  <div class="tab-content col-7" id="myTabContent">
-    <div class="tab-pane fade show active" id="formlogin" role="tabpanel" aria-labelledby="formlogin-tab">
-      <div class="form-container">
-        <form class="form" id="formLogin" action="#/login" method="POST">
-          <h2 class="form-heading text-uppercase text-center">Please sign in</h2>
-          <label for="inputUser" class="sr-only">Username</label>
-          <input type="text" id="inputUser" class="form-control" name="username" placeholder="Username" required autofocus>
-          <label for="inputPassword" class="sr-only">Password</label>
-          <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
-          <div class="text-right mb-1"><a class="link" href="#">Lost your password?</a></div>
-          <button class="btn btn-lg btn-block btn-log" type="submit">Sign in</button>
-        </form>
+<section>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="tab-content col-7" id="myTabContent">
+        <div class="tab-pane fade show active" id="formlogin" role="tabpanel" aria-labelledby="formlogin-tab">
+          <div class="form-container">
+            <form class="form" id="formLogin" action="#/login" method="POST">
+              <h2 class="form-heading text-uppercase text-center">Please sign in</h2>
+              <label for="inputUser" class="sr-only">Username</label>
+              <input type="text" id="inputUser" class="form-control" name="username" placeholder="Username" required autofocus>
+              <label for="inputPassword" class="sr-only">Password</label>
+              <input type="password" id="inputPassword" class="form-control" name="password" placeholder="Password" required>
+              <div class="text-right mb-1"><a class="link" href="#">Lost your password?</a></div>
+              <div class="text-right">
+                <button class="btn btn-log" type="submit">Sign in</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="tab-pane fade" id="formregister" role="tabpanel" aria-labelledby="formregister-tab">
+          <div class="form-container">
+            <form class="form justify-content-center" id="formRegister" action="#/register" method="POST">
+              <h2 class="form-heading text-uppercase text-center">Please sign up</h2>
+              <label for="inputName" class="sr-only">Name</label>
+              <input type="text" id="inputName" class="form-control" name="name" placeholder="Name" required autofocus>
+              <label for="inputUser" class="sr-only">Username</label>
+              <input type="text" id="inputUser" class="form-control" name="username" placeholder="Username" required autofocus>
+              <label for="inputEmail" class="sr-only">Email</label>
+              <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email" required autofocus>
+              <label for="inputPass" class="sr-only">Password</label>
+              <input type="password" id="inputPass" class="form-control" name="password" placeholder="Password" required autofocus>
+              <label for="inputPassConfirm" class="sr-only">Confirm Password</label>
+              <input type="password" id="inputPassConfirm" class="form-control" name="confirm-password" placeholder="Confirm Password"
+                required autofocus>
+              <div class="text-right">
+                <button class="btn" type="submit">Sign up</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
-    </div>
-    <div class="tab-pane fade" id="formregister" role="tabpanel" aria-labelledby="formregister-tab">
-      <div class="form-container">
-        <form class="form justify-content-center" id="formRegister" action="#/register" method="POST">
-          <h2 class="form-heading text-uppercase text-center">Please sign up</h2>
-          <label for="inputName" class="sr-only">Name</label>
-          <input type="text" id="inputName" class="form-control" name="name" placeholder="Name" required autofocus>
-          <label for="inputUser" class="sr-only">Username</label>
-          <input type="text" id="inputUser" class="form-control" name="username" placeholder="Username" required autofocus>
-          <label for="inputEmail" class="sr-only">Email</label>
-          <input type="email" id="inputEmail" class="form-control" name="email" placeholder="Email" required autofocus>
-          <label for="inputPass" class="sr-only">Password</label>
-          <input type="password" id="inputPass" class="form-control" name="password" placeholder="Password" required autofocus>
-          <label for="inputPassConfirm" class="sr-only">Confirm Password</label>
-          <input type="password" id="inputPassConfirm" class="form-control" name="confirm-password" placeholder="Confirm Password"
-            required autofocus>
-          <button class="btn btn-lg btn-block btn-log" type="submit">Sign up</button>
-        </form>
-      </div>
+
+      <aside class="col-3 ml-auto aside-content">
+        <div class="pb-4 list-posts">
+
+        </div>
+        <div class="pb-4 list-comments">
+
+        </div>
+        <h5 class="text-uppercase">Meta</h5>
+        <div class="shadow">
+          <ul class="list-unstyled">
+            <li><a href="#/home">Home</a></li>
+            <li><a href="#/location">Location</a></li>
+            <li><a href="#/menu">Menu</a></li>
+            <li><a href="#/gallery/1">Gallery</a></li>
+            <li><a href="#/blog/1">Blog</a></li>
+            <li><a href="#/contactus">Contact Us</a></li>
+            <li><a href="#/login">Member Login</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </div>
-  <aside class="col-4 ml-auto aside-content">
-    <h5 class="text-uppercase">Recent post</h5>
-    <div class="shadow">
-      <ul class="list-unstyled table-bordered">
-        <li><a href="#">Asian Salad</a></li>
-        <li><a href="#">Tomato Pasta</a></li>
-        <li><a href="#">Pizza Pasta</a></li>
-        <li><a href="#">Salmon with Vegetables</a></li>
-        <li><a href="#">Fresh French Bread</a></li>
-      </ul>
-    </div>
-    <h5 class="text-uppercase">Recent comments</h5>
-    <div class="shadow">
-      <ul class="list-unstyled table-bordered">
-        <li><a href="#">New Theme</a></li>
-        <li><a href="#">Lorem ipsum</a></li>
-        <li><a href="#">Lorem</a></li>
-        <li><a href="#">Ultra</a></li>
-        <li><a href="#">Ipsum</a></li>
-      </ul>
-    </div>
-  </aside>
 </section>
 <span class="gradient-line"></span>
