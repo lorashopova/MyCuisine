@@ -1,0 +1,195 @@
+<div class="section-title search">
+    <div class="container-fluid">
+        <nav class="navbar navbar-content navbar-light p-0">
+            <span class="d-inline-block navbar-brand mb-0 text-uppercase">Home <span>&#187;</span> Menu</span>
+            <form class="form-inline float-md-right d-inline-block">
+                <input class="form-control" type="text" id="search-input" placeholder="Search this website..." aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" id="search-btn" type="button">Search</button>
+            </form>
+        </nav>
+    </div>
+</div>
+</div>
+<span class="gradient-line"></span>
+<section>
+    <div class="container-fluid">
+        <div class="row main-menu">
+            <div class="col-12 col-sm-6 col-md-4 p-0 unmoved">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Chef's recommendations</h5>
+                <ul class="list-unstyled">
+                    {{#each recommendations}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 moved">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Salads</h5>
+                <ul class="list-unstyled">
+                    {{#each salads}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 moved-1">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Starters</h5>
+                <ul class="list-unstyled">
+                    {{#each starters}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 unmoved">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Seafood</h5>
+                <ul class="list-unstyled">
+                    {{#each seafood}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 moved">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Main Dishes</h5>
+                <ul class="list-unstyled">
+                    {{#each maindishes}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 moved-1">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Desserts</h5>
+                <ul class="list-unstyled">
+                    {{#each desserts}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 p-0 unmoved">
+                {{!-- {{#if starters.length}}{{else}} No meal available! {{/if}} --}}
+                <h5 class="part-title pb-2">Beverages</h5>
+                <ul class="list-unstyled">
+                    {{#each beverages}}
+                    <li class="row mb-3">
+                        <div class="col-12 col-sm-6 col-md-3 pr-0 pl-0">
+                            <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                            <span class="price-tag">
+                                <span>{{price}}</span>
+                            </span>
+                        </div>
+                        <div class="col-12 col-sm-6 col-md-9 pl-0">
+                            <a href="#/meal/{{_id}}">
+                                <h5 class="mb-1">{{title}}</h5>
+                            </a>
+                            <p class="d-inline-block text-truncate mb-0" style="max-width:200px;">
+                                {{description}}
+                            </p>
+                            <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                        </div>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<span class="gradient-line"></span>
