@@ -11,28 +11,28 @@
 <section>
   <div class="container-fluid home-view-container">
     <div class="row">
-      <div class="col recommendations">
+      <div class="col-12 col-md-4 recommendations">
         <h5 class="part-title pb-2">Chef's recommendations</h5>
         <ul class="list-unstyled">
           {{#each meal}}
             <li class="row pb-2">
-              <div class="col-3 pr-0 pl-0">
+              <div class="col-12 col-sm-5 col-md-3 pr-0 pl-0">
                 <img class="img-fluid img-thumbnail rounded-0" src="{{image._downloadURL}}" alt="Generic placeholder image">
               </div>
-              <div class="col-9 pr-2 pt-1">
+              <div class="col-12 col-sm-7 col-md-9 pt-1">
                 <a href="#/meal/{{_id}}">
                   <h5 class="mb-1">{{title}}</h5>
                 </a>
                 <p class="d-inline-block text-truncate mb-0" style="max-width:180px;">
                   {{description}}
                 </p>
-                <a href="#/meal/{{_id}}" class="d-block"><span>Read more</span></a>
+                <a href="#/meal/{{_id}}" class="d-block more"><span>Read more</span></a>
               </div>
             </li>
           {{/each}}
         </ul>
       </div>
-      <div class="col map">
+      <div class="col-12 col-md-4 map">
         <h5 class="part-title pb-2">Location and hours of operation</h5>
         <div class="embed-responsive embed-responsive-4by3">
           <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?q=888%20E%20Tahquitz%20Canyon%20Way%20Palm%20Springs&key=AIzaSyA30gTZgdEDO-4X0Y-nroAlnxJlf0aZlJs"
@@ -46,7 +46,7 @@
           <span class="hour">8am-10pm</span>
         </div>
       </div>
-      <div class="col testimonials">
+      <div class="col-sm-12 col-md-4 testimonials">
         <h5 class="part-title pb-2">Customer testimonials</h5>
         <div class="shadow">
           <div class="bubble">
