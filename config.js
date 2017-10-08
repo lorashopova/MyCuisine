@@ -21,7 +21,6 @@ SystemJS.config({
         'appModel': './scripts/requests/app-requests.js',
         'userController': './scripts/controllers/user-controller.js',
         'appController': './scripts/controllers/app-controller.js'
-
     }
 });
 
