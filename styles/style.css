@@ -405,6 +405,10 @@ header {
   width: 100%;
   padding: 5px;
 }
+#wrapper section .container-fluid .embed-location {
+  margin-left: 30px;
+  width: 600px;
+}
 #wrapper section .container-fluid .map {
   padding-left: 33px;
 }
@@ -487,8 +491,11 @@ header {
   line-height: 1.5em;
 }
 #wrapper section .container-fluid .info-parts {
-  margin-bottom: 3.4em;
-  padding-left: 9px;
+  margin-bottom: 2.88em;
+  padding-left: 6px;
+}
+#wrapper section .container-fluid .info-parts h5 {
+  padding-bottom: 0px;
 }
 #wrapper section .container-fluid .gallery img {
   max-width: 100%;
@@ -926,12 +933,14 @@ footer {
 }
 .footer-aside .container-fluid {
   width: 100%;
-  padding-top: 45px;
+  padding-top: 40px;
   padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .footer-aside .container-fluid .row {
   border-bottom: solid #CAC6A1 1px;
-  padding-bottom: 15px;
+  padding-bottom: 30px;
 }
 .footer-aside .container-fluid .row .copyright span {
   font-size: 0.75em;
@@ -940,13 +949,15 @@ footer {
   font-size: 0.75em;
 }
 .footer-aside .container-fluid .row .footer-links {
-  padding-left: 40px;
+  padding-left: 44px;
+  padding-top: 7px;
 }
 .footer-aside .container-fluid .row .footer-links li {
-  padding-bottom: 5px;
+  padding-bottom: 3px;
 }
 .footer-aside .container-fluid .row .text-widget {
-  padding-left: 60px;
+  padding-left: 56px;
+  padding-top: 7px;
 }
 .footer-aside .container-fluid h5 {
   font-family: 'LeagueGothic', serif;
@@ -1094,6 +1105,10 @@ footer {
   }
   .footer-home {
     height: 9.5em;
+  }
+  #wrapper section .container-fluid .embed-location {
+    max-width: 100%;
+    margin-left: 0;
   }
 }
 @media screen and (max-width: 690px) {
