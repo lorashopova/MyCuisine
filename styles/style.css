@@ -979,6 +979,7 @@ footer {
 }
 .footer-aside .container-fluid .row p {
   font-size: 0.75em;
+  line-height: 20px;
 }
 .footer-aside .container-fluid .row .footer-links {
   padding-left: 44px;
@@ -1061,6 +1062,7 @@ footer {
   }
   #wrapper section .container-fluid .map {
     text-align: center;
+    padding-left: 15px;
   }
   #wrapper section .container-fluid .map h5 {
     text-align: start;
@@ -1068,6 +1070,9 @@ footer {
   #wrapper section .container-fluid .map .embed-responsive {
     max-width: 100%;
     height: auto;
+  }
+  #wrapper section .container-fluid .testimonials {
+    padding-left: 15px;
   }
   #wrapper section .container-fluid .testimonials .bubble {
     width: 100%;
@@ -1091,8 +1096,14 @@ footer {
   #wrapper section .container-fluid .col-md-8 {
     padding: 0;
   }
+  #wrapper section .container-fluid .info-parts {
+    padding-left: 15px;
+  }
+  #wrapper section .container-fluid .blog {
+    padding-left: 15px;
+  }
   #wrapper section .container-fluid .main-menu {
-    padding: 15px;
+    padding: 30px;
   }
   #wrapper section .container-fluid .main-menu .list-unstyled .col-md-3 img {
     display: block;
@@ -1196,6 +1207,10 @@ footer {
   }
   #wrapper section .container-fluid .comments .comment-form {
     padding-bottom: 30px;
+  }
+  #wrapper section .col-md-3.aside-content,
+  #wrapper section .col-md-4.aside-content {
+    padding-left: 15px;
   }
 }
 @media screen and (max-width: 480px) {
