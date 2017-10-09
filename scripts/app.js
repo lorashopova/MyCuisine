@@ -29,6 +29,7 @@ const app = app || {};
             const username = this.params.username;
             const email = this.params.email;
             const password = this.params.password;
+            const confirmPassword = this.params.confirmPassword;
             userController.registerAction(selector, name, username, email, password);
         });
 
