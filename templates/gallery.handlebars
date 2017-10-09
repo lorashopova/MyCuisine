@@ -15,7 +15,7 @@
     <div class="container-fluid">
             <div class="row gallery">
                 {{#each meal}}
-                <div class="col-6 col-md-4"><a href="#/meal/{{_id}}"><img class="img-thumbnail" src="{{image._downloadURL}}" /><img class="img-thumbnail preview" src="{{image._downloadURL}}" /></a></div>
+                <div class="col-6 col-md-4"><a href="#/meal/{{_id}}" title="meal"><img class="img-thumbnail" src="{{image._downloadURL}}" /><img class="img-thumbnail preview" src="{{image._downloadURL}}" /></a></div>
                 {{/each}}
             </div>
         <nav aria-label="Page navigation">

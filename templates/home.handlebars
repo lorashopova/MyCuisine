@@ -12,21 +12,21 @@
   <div class="container-fluid home-view-container">
     <div class="row">
       <div class="col-12 col-md-4 recommendations">
-        <h5 class="part-title pb-2">Chef's recommendations</h5>
+        <h5 class="part-title">Chef's recommendations</h5>
         <ul class="list-unstyled">
           {{#each meal}}
-            <li class="row pb-2">
+            <li class="row">
               <div class="col-12 col-sm-5 col-md-3 pr-0 pl-0">
                 <img class="img-fluid img-thumbnail rounded-0" src="{{image._downloadURL}}" alt="Generic placeholder image">
               </div>
-              <div class="col-12 col-sm-7 col-md-9 pt-1">
-                <a href="#/meal/{{_id}}">
-                  <h5 class="mb-1">{{title}}</h5>
+              <div class="col-12 col-sm-7 col-md-9">
+                <a href="#/meal/{{_id}}" title="meal">
+                  <h5>{{title}}</h5>
                 </a>
-                <p class="d-inline-block text-truncate mb-0" style="max-width:180px;">
+                <span class="d-block text-truncate mb-0" style="max-width:180px;">
                   {{description}}
-                </p>
-                <a href="#/meal/{{_id}}" class="d-block more"><span>Read more</span></a>
+                </span>
+                <a href="#/meal/{{_id}}" class="d-block more" title="read-more"><span>Read more</span></a>
               </div>
             </li>
           {{/each}}
@@ -38,7 +38,7 @@
           <iframe class="embed-responsive-item" src="https://www.google.com/maps/embed/v1/place?q=888%20E%20Tahquitz%20Canyon%20Way%20Palm%20Springs&key=AIzaSyA30gTZgdEDO-4X0Y-nroAlnxJlf0aZlJs"
             allowfullscreen></iframe>
         </div>
-        <div class="location mb-1 mt-2">888 E Tahquitz Canyon Way, CA 92262</div>
+        <div class="location">888 E Tahquitz Canyon Way, CA 92262</div>
         <div class="time">
           <span>mon-fri</span>
           <span class="hour">8am-6pm</span>

@@ -17,7 +17,7 @@
             <div class="col-12 col-sm-7 col-md-8">
                 {{#each meal}}
                 <div class="blog mb-5">
-                    <a href="#/meal/{{_id}}">
+                    <a href="#/meal/{{_id}}" title="meal">
                         <h5 class="part-title">{{title}}</h5>
                     </a>
                     <div>Posted by Admin on {{date}} in {{category}}</div>
@@ -28,7 +28,7 @@
                         <div class="col-4 col-sm-6 col-md-6">
                             <p>{{description}}</p>
                             <div class="text-right">
-                                <a href="#/meal/{{_id}}" class="btn">Read more</a>
+                                <a href="#/meal/{{_id}}" title="read-more" class="btn">Read more</a>
                             </div>
                         </div>
                     </div>
@@ -53,13 +53,13 @@
             <h5 class="text-uppercase">Meta</h5>
             <div class="shadow">
                 <ul class="list-unstyled">
-                    <li><a href="#/home">Home</a></li>
-                    <li><a href="#/location">Location</a></li>
-                    <li><a href="#/menu">Menu</a></li>
-                    <li><a href="#/gallery/1">Gallery</a></li>
-                    <li><a href="#/blog/1">Blog</a></li>
-                    <li><a href="#/contactus">Contact Us</a></li>
-                    <li><a href="#/login">Member Login</a></li>
+                    <li><a href="#/home" title="link-footer">Home</a></li>
+                    <li><a href="#/location" title="link-footer">Location</a></li>
+                    <li><a href="#/menu" title="link-footer">Menu</a></li>
+                    <li><a href="#/gallery/1" title="link-footer">Gallery</a></li>
+                    <li><a href="#/blog/1" title="link-footer">Blog</a></li>
+                    <li><a href="#/contactus" title="link-footer">Contact Us</a></li>
+                    <li><a href="#/login" title="link-footer">Member Login</a></li>
                 </ul>
             </div>
         </aside>
