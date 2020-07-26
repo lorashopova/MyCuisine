@@ -12,15 +12,15 @@ Single-page application sliced from the given design (PSD Design folder), withou
 
 ### Technologies used
 
--	jQuery,
--	Handlebars,
+- jQuery,
+- Handlebars,
 - Less,
 - Bootstrap,
 - SystemJS,
 - SammyJS,
 - Moment,
 - Gulp,
-- Kinvey API, Database
+- Firebase API, Database
 - Firebase API, Host
 
 ### The Application consists of the following pages:
