@@ -14,8 +14,6 @@ SystemJS.config({
         
         'app': './scripts/app.js',
         'templates': './scripts/utils/template.js',
-        'requester': './scripts/utils/requester.js',
-        'constants': './scripts/utils/constants.js',
         'pagination': './scripts/utils/pagination.js',        
         'userModel': './scripts/requests/authentication-requests.js',
         'appModel': './scripts/requests/app-requests.js',

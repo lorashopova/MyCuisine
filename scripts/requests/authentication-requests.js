@@ -1,7 +1,4 @@
 import toastr from 'toastr';
-import {
-    requester
-} from 'requester';
 
 class UserModel {
 

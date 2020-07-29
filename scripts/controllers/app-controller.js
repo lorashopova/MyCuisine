@@ -13,7 +13,7 @@ const appController = (function() {
             this.templates = templates;
             this.appModel = appModel;
         }
-//done
+
         getHomePage(selector, category) {
             $(selector).empty();
             $('#carouselIndicators').removeClass('hidden');
@@ -25,6 +25,7 @@ const appController = (function() {
             $('.home-view').removeClass('hidden');
             let result;
             this.appModel.getMealByCategory(category).then((data) => {
+                // console.log(Object.keys(data)); // returns elements ids
                 result = {
                     meal: data
                 };
@@ -37,7 +38,7 @@ const appController = (function() {
                 location.hash = '#/home';
             });
         }
-//done
+
         getLocation(selector) {
             $(selector).empty();
             this.viewChanges();
@@ -50,7 +51,9 @@ const appController = (function() {
                 location.hash = '#/home';
             });
         }
-// TO DO COMMENTS
+ 
+        //dbRef.orderByChild("age").equalTo("4").once(),
+        //dbRef.orderByKey().equalTo("-M0FIuRBi5NT1VKsTbQt").once(),
         getContactUs(selector) {
             $(selector).empty();
             let resultPosts;
@@ -62,8 +65,6 @@ const appController = (function() {
                 $('.container-fluid .content-subtitle').text('Lorem ipsum lorem ipsum');
             }).then(() => {
                 this.searchByTitle(selector);
-//dbRef.orderByChild("age").equalTo("4").once(),
-//dbRef.orderByKey().equalTo("-M0FIuRBi5NT1VKsTbQt").once(),
             }).then(() => {
                 this.appModel.getMeal().then((items) => {
                     const data = Object.values(items);
@@ -76,22 +77,22 @@ const appController = (function() {
                     $('.list-posts').html(template(resultPosts));
                 });
             }).then(() => {
-            //     this.appModel.getAllComments().then((items) => {
-            //         const data = Object.values(items);
-            //         const recent = data.slice(0, 7);
-            //         resultComments = {
-            //             recentComments: recent
-            //         };
-            //         return templates.getTemplate('recent-comments');
-            //     }).then((template) => {
-            //         $('.list-comments').html(template(resultComments));
-                // });
+                this.appModel.getSidebarComments().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultComments = {
+                        recentComments: recent
+                    };
+                    return templates.getTemplate('recent-comments');
+                }).then((template) => {
+                    $('.list-comments').html(template(resultComments));
+                });
             }).catch((error) => {
                 toastr.error('Unable to display form!');
                 location.hash = '#/home';
             });
         }
-//done
+
         contactUsAction(selector, name, email, subject, text) {
             $(selector).empty();
             this.viewChanges();
@@ -102,7 +103,7 @@ const appController = (function() {
                 toastr.error('Send your message again.');
             });
         }
-//done
+
         getMenu(selector) {
             $(selector).empty();
             this.viewChanges();
@@ -137,7 +138,7 @@ const appController = (function() {
                 location.hash = '#/home';
             });
         }
-//done
+
         getGallery(selector, pageNumberParam) {
             $(selector).empty();
             this.viewChanges();
@@ -165,7 +166,7 @@ const appController = (function() {
                 location.hash = '#/home';
             });
         }
-// TO DO COMMENTS
+
          getMenuByCategory(selector, category) {
             $(selector).empty();
             this.viewChanges();
@@ -195,22 +196,22 @@ const appController = (function() {
                     $('.list-posts').html(template(resultPosts));
                 });
             }).then(() => {
-                // this.appModel.getAllComments().then((items) => {
-                // const data = Object.values(items);
-                //     const recent = data.slice(0, 7);
-                //     resultComments = {
-                //         recentComments: recent
-                //     };
-                //     return templates.getTemplate('recent-comments');
-                // }).then((template) => {
-                //     $('.list-comments').html(template(resultComments));
-                // });
+                this.appModel.getSidebarComments().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultComments = {
+                        recentComments: recent
+                    };
+                    return templates.getTemplate('recent-comments');
+                }).then((template) => {
+                    $('.list-comments').html(template(resultComments));
+                });
             }).catch((error) => {
                 toastr.error('Unable to display meal!');
                 location.hash = '#/home';
             });
         }
-// TO DO COMMENTS
+
         getBlog(selector, pageNumberParam) {
             $(selector).empty();
             this.viewChanges();
@@ -247,40 +248,40 @@ const appController = (function() {
                     $('.list-posts').html(template(resultPosts));
                 });
             }).then(() => {
-            //     this.appModel.getAllComments().then((items) => {
-            //         const data = Object.values(items);
-            //         const recent = data.slice(0, 7);
-            //         resultComments = {
-            //             recentComments: recent
-            //         };
-            //         return templates.getTemplate('recent-comments');
-            //     }).then((template) => {
-            //         $('.list-comments').html(template(resultComments));
-            //     });
-            // }).catch((error) => {
-            //     toastr.error('Unable to display page!');
-            //     location.hash = '#/home';
+                this.appModel.getSidebarComments().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultComments = {
+                        recentComments: recent
+                    };
+                    return templates.getTemplate('recent-comments');
+                }).then((template) => {
+                    $('.list-comments').html(template(resultComments));
+                });
+            }).catch((error) => {
+                toastr.error('Unable to display page!');
+                location.hash = '#/home';
             });
         }
-// TO DO
-        getById(selector, id) {
+ 
+        getByTitle(selector, title) {
             $(selector).empty();
             this.viewChanges();
             let result;
             let resultComment;
             let resultPosts;
             let resultComments; 
-            this.appModel.getMealById(id).then((data) => {
-                result = data;
+            this.appModel.getMealByTitle(title).then((data) => {
+                result = Object.values(data)[0];
                 return templates.getTemplate('post');
             }).then((responseTemplate) => {
                 selector.html(responseTemplate(result));
                 this.viewChangesAuth();
                 $('.container-fluid .content-title').text('Menu');
                 $('.container-fluid .content-subtitle').text('Lorem ipsum lorem ipsum');
-                this.appModel.getComments(result._id).then((data) => {
+                this.appModel.getComments(title).then((data) => {
                     resultComment = {
-                        comments: data
+                        comments: Object.values(data)
                     };
                     return templates.getTemplate('comments');
                 }).then((template) => {
@@ -300,26 +301,27 @@ const appController = (function() {
                     $('.list-posts').html(template(resultPosts));
                 });
             }).then(() => {
-                // this.appModel.getAllComments().then((items) => {
-                //     const data = Object.values(items);
-                //     const recent = data.slice(0, 7);
-                //     resultComments = {
-                //         recentComments: recent
-                //     };
-                //     return templates.getTemplate('recent-comments');
-                // }).then((template) => {
-                //     $('.list-comments').html(template(resultComments));
-                // });
+                this.appModel.getSidebarComments().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultComments = {
+                        recentComments: recent
+                    };
+                    return templates.getTemplate('recent-comments');
+                }).then((template) => {
+                    $('.list-comments').html(template(resultComments));
+                });
             }).catch((error) => {
                 toastr.error('Unable to display meal!');
                 location.hash = '#/home';
             });
         }
-// TO DO
-        commentsAction(selector, comment, date, name, mealId) {
+
+        commentsAction(selector, comment, date, name, mealTitle) {
             $(selector).empty();
             this.viewChanges();
-            appModel.postComment(comment, date, name, mealId).then((data) => {
+            appModel.postComment(comment, date, name, mealTitle).then((data) => {
+                console.log(data);
                 toastr.success('Your comment was added successfuly!');
                 location.reload();
             }).catch((error) => {
@@ -352,9 +354,8 @@ const appController = (function() {
             let resultSearch;
             $('#search-btn').on('click', () => {
                     const title = $('#search-input').val();
-
                     $('#search-input').val('');
-                    this.appModel.getMealByTitle(title).then((dataSearch) => {
+                    this.appModel.searchMealByTitle(title).then((dataSearch) => {
                         resultSearch = {
                             meal: dataSearch
                         };

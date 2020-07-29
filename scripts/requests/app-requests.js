@@ -1,15 +1,13 @@
 import toastr from 'toastr';
-import {
-    requester
-} from 'requester';
-const URL = firebaseConfig.databaseURL;
 
 class AppModel {
     isAuthed() {
         return localStorage.getItem('id') !== null;
     }
-//https://my-cuisine-63b0f.firebaseio.com/meal.json?orderBy="category"&equalTo="Salads"
-// const query = events.orderByChild('status').equalTo('ok').limitToFirst(2);
+
+    //https://my-cuisine-63b0f.firebaseio.com/meal.json?orderBy="category"&equalTo="Salads"
+    // const query = events.orderByChild('status').equalTo('ok').limitToFirst(2);
+
     getMealByCategory(category) {
         return firebase.database().ref().child("meal").orderByChild("category").equalTo(category).once('value')
         .then(function (snapshot) {
@@ -24,48 +22,57 @@ class AppModel {
         });
     }
 
-    // getMealById(id) {
-    //     return requester.get('appdata', 'meal/' + id);
-    // }
+    getMealByTitle(title) {
+        return firebase.database().ref().child("meal").orderByChild("title").equalTo(title).once('value')
+        .then(function (snapshot) {
+            return snapshot.val();
+         });
+    }
 
-    // getMealByTitle(title) {
-    //     const filter = JSON.stringify({
-    //         "title": {
-    //             "$regex": `^(?i)${title}`
-    //         }
-    //     });
+    searchMealByTitle(filter) {
+        // const filter = JSON.stringify({
+        //     "title": {
+        //         "$regex": `^(?i)${title}`
+        //     }
+        // });
+        return firebase.database().ref().child("meal").orderByChild("title").startAt(filter).endAt(filter+'\uf8ff').once('value')
+        .then(function (snapshot) {
+            return snapshot.val();
+         });
+    }
 
-    //     return requester.get('appdata', 'meal/?query=' + filter);
-    // }
+    getComments(title) {
+        return firebase.database().ref().child("comments").orderByChild("mealTitle").equalTo(title).once('value')
+        .then(function (snapshot) {
+            return snapshot.val();
+         });
+    }
 
-    // getComments(id) {
-    //     const filter = JSON.stringify({
-    //         "mealId": id
-    //     });
-    //     return requester.get('appdata', 'comments/?query=' + filter);
-    // }
+    getSidebarComments(){
+        return firebase.database().ref('/comments').once('value')
+        .then(function(snapshot) {
+             return snapshot.val();
+         });
+    }
 
-    // getAllComments(){
-    //     return requester.get('appdata', 'comments');
-    // }
+    postComment(comment, date, name, mealTitle) {
+        const data = {
+            comment: comment,
+            date: date,
+            name: name,
+            mealTitle: mealTitle
+        }
+        return firebase.database().ref().child('comments').push(data);
+    }
 
-    // postMessage(name, email, subject, text) {
-    //     return requester.post('appdata', 'messages', {
-    //         name,
-    //         email,
-    //         subject,
-    //         text
-    //     });
-    // }
-
-    // postComment(comment, date, name, mealId) {
-    //     return requester.post('appdata', 'comments', '', {
-    //         comment,
-    //         date,
-    //         name,
-    //         mealId
-    //     });
-    // }
+    postMessage(name, email, subject, text) {
+        return firebase.firestore().collection("messages").add({
+            name: name,
+            email: email,
+            subject: subject,
+            text: text
+        })
+    }
 }
 
 const appModel = new AppModel();

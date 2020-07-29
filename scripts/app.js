@@ -49,13 +49,13 @@ const app = app || {};
             appController.getContactUs(selector);
         });
 
-        // this.post('#/contactus', function() {
-        //     const name = this.params.name;
-        //     const email = this.params.email;
-        //     const subject = this.params.subject;
-        //     const text = this.params.text;
-        //     appController.contactUsAction(selector, name, email, subject, text);
-        // });
+        this.post('#/contactus', function() {
+            const name = this.params.name;
+            const email = this.params.email;
+            const subject = this.params.subject;
+            const text = this.params.text;
+            appController.contactUsAction(selector, name, email, subject, text);
+        });
 
         this.get('#/blog/?:pageNumber', function() {
             const pageNumber = this.params.pageNumber;
@@ -71,24 +71,25 @@ const app = app || {};
             appController.getMenuByCategory(selector, category);
         });
 
-        // this.get('#/meal/:id', function() {
-        //     const id = this.params.id;
-        //     appController.getById(selector, id);
-        // });
+        this.get('#/meal/:title', function() {
+            const title = this.params.title;
+            appController.getByTitle(selector, title);
+        });
 
         this.get('#/gallery/?:pageNumber', function() {
             const pageNumber = this.params.pageNumber;
             appController.getGallery(selector, pageNumber);
         });
 
-        // this.post('#/comments', function() {
-        //     const comment = this.params.commentText;
-        //     const date = new Date().toISOString().slice(0, 10);
-        //     const name = localStorage.getItem('name');
-        //     const pathname = window.location.hash;
-        //     const mealId = pathname.substring(window.location.hash.lastIndexOf('/') + 1);
-        //     appController.commentsAction(selector, comment, date, name, mealId);
-        // });
+        this.post('#/comments', function() {
+            const comment = this.params.commentText;
+            const date = new Date().toISOString().slice(0, 10);
+            const name = localStorage.getItem('email');
+            const pathname = window.location.hash;
+            const searchedTitle = pathname.substring(window.location.hash.lastIndexOf('/') + 1);
+            const mealTitle = decodeURI(searchedTitle);
+            appController.commentsAction(selector, comment, date, name, mealTitle);
+        });
 
         $('.navbar-nav a').on('click', function() {
             $('.navbar-nav').find('.active').removeClass('active');

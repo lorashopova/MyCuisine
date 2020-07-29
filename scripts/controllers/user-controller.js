@@ -2,7 +2,7 @@ import 'jquery';
 import toastr from 'toastr';
 import { templates } from 'templates';
 import { userModel } from 'userModel';
-// import { appModel } from 'appModel';
+import { appModel } from 'appModel';
 
 const MIN_LENGTH = 3;
 const MAX_LENGTH = 20;
@@ -21,10 +21,10 @@ const userController = (function() {
             $('.footer-aside').removeClass('hidden');
             $('.home-view').addClass('hidden');
 
-            // if(password !== confirmPassword){
-            //     toastr.error('Please confirm correctly password');
-            //     return;
-            // }
+            if(password !== confirmPassword){
+                toastr.error('Please confirm correctly password');
+                return;
+            }
 
             userModel.register(email, password).then((userInfo) => {
                 toastr.success('User registration successful!');
@@ -51,26 +51,28 @@ const userController = (function() {
                 selector.html(responseTemplate());
                 $('.container-fluid .content-title').text('Member login');
                 $('.container-fluid .content-subtitle').text('Lorem ipsum lorem ipsum');
-            // }).then(() => {
-            //     appModel.getMeal().then((data) => {
-            //         const recent = data.slice(0, 7);
-            //         resultPosts = {
-            //             recentPosts: recent
-            //         };
-            //         return templates.getTemplate('recent-posts');
-            //     }).then((template) => {
-            //         $('.list-posts').html(template(resultPosts));
-            //     });
-            // }).then(() => {
-            //     appModel.getAllComments().then((data) => {
-            //         const recent = data.slice(0, 7);
-            //         resultComments = {
-            //             recentComments: recent
-            //         };
-            //         return templates.getTemplate('recent-comments');
-            //     }).then((template) => {
-            //         $('.list-comments').html(template(resultComments));
-            //     });
+            }).then(() => {
+                appModel.getMeal().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultPosts = {
+                        recentPosts: recent
+                    };
+                    return templates.getTemplate('recent-posts');
+                }).then((template) => {
+                    $('.list-posts').html(template(resultPosts));
+                });
+            }).then(() => {
+                appModel.getSidebarComments().then((items) => {
+                    const data = Object.values(items);
+                    const recent = data.slice(0, 7);
+                    resultComments = {
+                        recentComments: recent
+                    };
+                    return templates.getTemplate('recent-comments');
+                }).then((template) => {
+                    $('.list-comments').html(template(resultComments));
+                });
             }).catch((error) => {
                 toastr.error('');
             });
@@ -86,7 +88,8 @@ const userController = (function() {
                 location.hash = '#/home';
             }).catch((error) => {
                 toastr.error('Invalid username or password!');
-                location.hash = '#/home';
+                // location.hash = '#/login';
+                location.reload(true);
             });
         }
 
