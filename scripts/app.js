@@ -16,9 +16,8 @@ const app = app || {};
         });
 
         this.get('#/home', () => {
-            // const category = 'Chef\'s recommendations';
-            // appController.getHomePage(selector, category);
-            appController.getHomePage(selector);
+            const category = 'Chef\'s recommendations';
+            appController.getHomePage(selector, category);
         });
 
         this.post('#/register', function() {
@@ -58,29 +57,29 @@ const app = app || {};
         //     appController.contactUsAction(selector, name, email, subject, text);
         // });
 
-        // this.get('#/blog/?:pageNumber', function() {
-        //     const pageNumber = this.params.pageNumber;
-        //     appController.getBlog(selector, pageNumber);
-        // });
+        this.get('#/blog/?:pageNumber', function() {
+            const pageNumber = this.params.pageNumber;
+            appController.getBlog(selector, pageNumber);
+        });
 
-        // this.get('#/menu', () => {
-        //     appController.getMenu(selector);
-        // });
+        this.get('#/menu', () => {
+            appController.getMenu(selector);
+        });
 
-        // this.get('#/menu/:category', function() {
-        //     const category = this.params.category;
-        //     appController.getMenuByCategory(selector, category);
-        // });
+        this.get('#/menu/:category', function() {
+            const category = this.params.category;
+            appController.getMenuByCategory(selector, category);
+        });
 
         // this.get('#/meal/:id', function() {
         //     const id = this.params.id;
         //     appController.getById(selector, id);
         // });
 
-        // this.get('#/gallery/?:pageNumber', function() {
-        //     const pageNumber = this.params.pageNumber;
-        //     appController.getGallery(selector, pageNumber);
-        // });
+        this.get('#/gallery/?:pageNumber', function() {
+            const pageNumber = this.params.pageNumber;
+            appController.getGallery(selector, pageNumber);
+        });
 
         // this.post('#/comments', function() {
         //     const comment = this.params.commentText;
