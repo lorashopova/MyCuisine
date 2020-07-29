@@ -22,18 +22,18 @@
                         {{#each menu}}
                         <li class="row pb-2 mb-2">
                             <div class="col-6 col-sm-5 col-md-4 pr-0">
-                                <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{image._downloadURL}}" alt="Generic placeholder image">
+                                <img class="img-fluid img-thumbnail rounded-0 d-block" src="{{imageURL}}" alt="Generic placeholder image">
                                 <span class="price-tag">
                                 <span>{{price}}</span>
                                 </span>
                             </div>
                             <div class="col-6 col-sm-7 col-md-8 pr-2 pt-1">
-                                <a href="#/meal/{{_id}}" title="meal">
+                                <a href="#/meal/{{title}}" title="meal">
                                     <h5 class="mb-1">{{title}}</h5>
                                 </a>
                                 <p>{{description}}</p>
                                 <div class="text-right">
-                                    <a href="#/meal/{{_id}}" class="btn" title="read-more">Read more</a>
+                                    <a href="#/meal/{{title}}" class="btn" title="read-more">Read more</a>
                                 </div>
                             </div>
                         </li>

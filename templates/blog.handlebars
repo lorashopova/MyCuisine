@@ -17,18 +17,18 @@
             <div class="col-12 col-sm-7 col-md-8">
                 {{#each meal}}
                 <div class="blog mb-5">
-                    <a href="#/meal/{{_id}}" title="meal">
+                    <a href="#/meal/{{title}}" title="meal">
                         <h5 class="part-title">{{title}}</h5>
                     </a>
                     <div>Posted by Admin on {{date}} in {{category}}</div>
                     <div class="row pl-0">
                         <div class="col-8 col-sm-6 col-md-6">
-                            <img src="{{image._downloadURL}}" class="img-fluid img-thumbnail rounded-0" alt="food-img">
+                            <img src="{{imageURL}}" class="img-fluid img-thumbnail rounded-0" alt="food-img">
                         </div>
                         <div class="col-4 col-sm-6 col-md-6">
                             <p>{{description}}</p>
                             <div class="text-right">
-                                <a href="#/meal/{{_id}}" title="read-more" class="btn">Read more</a>
+                                <a href="#/meal/{{title}}" title="read-more" class="btn">Read more</a>
                             </div>
                         </div>
                     </div>
