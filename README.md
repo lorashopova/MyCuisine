@@ -50,7 +50,7 @@ This page consists contact form.
 This page consists login form and register form.
 
 ### Live Demo
-[MyCuisine](https://my-cuisine-63b0f.web.app/)
+[MyCuisine](https://my-cuisine-63b0f.firebaseapp.com/)
 
 ### Video Demo
 [YouTube](https://youtu.be/RTdRdqfEx8w)
